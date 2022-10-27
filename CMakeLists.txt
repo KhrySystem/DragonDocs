@@ -1,21 +1,23 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.20)
 
-set(Dragon_Docs_SOURCE
-	headers/include/internal/platform.hpp
-	headers/include/internal/string.hpp
-	headers/include/dg_backend.hpp
-	headers/include/dgEngine.hpp
-	headers/include/dragon.hpp
-	headers/include/dragon.hpp
+file(GLOB_RECURSE Dragon_Docs_SOURCE ${Dragon_SOURCE_DIR}/headers/include)
+file(GLOB_RECURSE Dragon_Firebreath_Docs_SOURCE ${Dragon_SOURCE_DIR}/extensions/firebreath/include)
+file(GLOB_RECURSE Dragon_Ironbreath_Docs_SOURCE ${Dragon_SOURCE_DIR}/extensions/ironbreath/include)
+file(GLOB_RECURSE Dragon_Lightbreath_Docs_SOURCE ${Dragon_SOURCE_DIR}/extensions/lightbreath/include)
+file(GLOB_RECURSE Dragon_Streambreath_Docs_SOURCE ${Dragon_SOURCE_DIR}/extensions/streambreath/include)
+file(GLOB_RECURSE Dragon_Thunderbreath_Docs_SOURCE ${Dragon_SOURCE_DIR}/extensions/thunderbreath/include)
+
+set(Dragon_DOXYGEN_INPUT ${Dragon_Docs_SOURCE} 
+	${Dragon_Firebreath_Docs_SOURCE} 
+	${Dragon_Ironbreath_Docs_SOURCE}
+	${Dragon_Lightbreath_Docs_SOURCE}
+	${Dragon_Streambreath_Docs_SOURCE}
+	${Dragon_Thunderbreath_Docs_SOURCE}
 )
-
-foreach(path IN LISTS Dragon_Docs_SOURCE)
-    set(GLFW_DOXYGEN_INPUT "${GLFW_DOXYGEN_INPUT} \\\n\"${GLFW_SOURCE_DIR}/${path}\"")
-endforeach()
 
 configure_file(Doxyfile.in Doxyfile @ONLY)
 
-add_custom_target(docs ALL "${DOXYGEN_EXECUTABLE}"
+add_custom_target(Dragon_Docs ALL "${DOXYGEN_EXECUTABLE}"
 	WORKING_DIRECTORY "${Dragon_BINARY_DIR}/docs"
-	COMMENT "Generating HTML documentation" VERBATIM
+	COMMENT "Generating Dragon HTML documentation" VERBATIM
 )
