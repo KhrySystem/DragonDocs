@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 
+find_package(Doxygen REQUIRED)
+
 file(GLOB_RECURSE Dragon_Docs_Source ${Dragon_SOURCE_DIR}/docs/res)
 file(GLOB_RECURSE Dragon_Main_Docs_SOURCE ${Dragon_SOURCE_DIR}/headers/include)
 
