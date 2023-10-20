@@ -1,0 +1,49 @@
+/*!
+
+@page Building DragonEngine
+
+This page is about compiling applications with DragonEngine. The last section 
+also goes over how to build Dragon from source with CMake. 
+
+@tableofcontents
+
+@section build_include Including the proper header files
+
+In your core source file, you should include the core engine and the submodules
+you need. 
+
+@code
+// Audio Library
+#include <dragon/audio.hpp>
+
+// Compute Library
+#include <dragon/compute.hpp>
+
+// Core Library
+#Include <dragon/core.hpp>
+
+// Graphics library
+#include <dragon/graphics.hpp>
+
+// Physics Library
+#include <dragon/physics.hpp>
+@endcode
+
+Usually you should include the submodule's dependencies before including the 
+submodule itself, such as the case with the physics engine:
+
+@code
+// Core Engine
+#include <dragon/core.hpp>
+// Physics Engine dependencies
+#include <dragon/compute.hpp>
+#include <dragon/graphics.hpp>
+// Physics Engine
+#include <dragon/physics.hpp>
+@endcode
+
+While not explicitly needed, it is usually best practice to do it this way. 
+But forgetting one of them is not a critical error, as the submodules 
+automatically add their dependencies to the core engine if it is necesarry. 
+
+*/
