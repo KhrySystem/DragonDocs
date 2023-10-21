@@ -1,10 +1,18 @@
-/*!
+/**
 
 @mainpage notitle
 
 @section intro Introduction
 
-DragonEngine is a C++, open-source, code-first, cross-platform, 3D Vulkan Game engine. It gives simple API calls to do complex things, and without hiding the implementation if you don't like something. It extends to multiple other facets, including XR, CV, program acceleration using a GPU, realtime, accurate physics simulations, virtual camera output, and many others.
+DragonEngine is a C++, open-source, code-first, cross-platform, 3D Vulkan Game engine. 
+It gives simple API calls to do complex things, and without hiding the implementation 
+if you don't like something. It extends to multiple other facets, including XR, CV, 
+program acceleration, realtime, accurate physics simulations, virtual camera output, 
+and many others. If you need something that doesn't yet exist, it's simple to create 
+a new submodule and add the functionality you need with the submodule dependency system.
+
+Guides:
+- @ref building_guide Build Guide
 
 @tableofcontents
 

@@ -1,6 +1,6 @@
-/*!
+/**
 
-@page Building DragonEngine
+@page building_guide Building DragonEngine
 
 This page is about compiling applications with DragonEngine. The last section 
 also goes over how to build Dragon from source with CMake. 
