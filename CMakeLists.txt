@@ -7,7 +7,6 @@ string(APPEND Dragon_DOXYGEN_INPUT " \\\n\"${DragonEngine_SOURCE_DIR}/modules/co
 string(APPEND Dragon_DOXYGEN_INPUT " \\\n\"${DragonEngine_SOURCE_DIR}/modules/graphics/include\"")
 
 configure_file(Doxyfile.in Doxyfile @ONLY)
-configure_file(sphinx/conf.py.in ${CMAKE_CURRENT_SOURCE_DIR}/sphinx/conf.py)
 
 add_custom_target(dgdocs-${DragonEngine_VERSION_MAJOR} ALL "${DOXYGEN_EXECUTABLE}"
 	WORKING_DIRECTORY "${DragonEngine_BINARY_DIR}/docs"
