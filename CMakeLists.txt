@@ -7,6 +7,7 @@ if(Doxygen_FOUND)
 		${CMAKE_CURRENT_SOURCE_DIR}/res
 		${DragonEngine_SOURCE_DIR}/modules/core/include
 		${DragonEngine_SOURCE_DIR}/modules/graphics/include
+		${DragonEngine_SOURCE_DIR}/modules/compute/include
 		ALL
 		WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 		COMMENT "Generating Dragon HTML documentation" 
