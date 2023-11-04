@@ -12,4 +12,9 @@ if(Doxygen_FOUND)
 		WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 		COMMENT "Generating Dragon HTML documentation" 
 	)
+
+	if(Dragon_INSTALL)
+		include(GNUInstallDirs)
+		install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/html/ DESTINATION ${CMAKE_INSTALL_DOCDIR})
+	endif()
 endif()
